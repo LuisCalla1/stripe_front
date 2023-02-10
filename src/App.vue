@@ -1,19 +1,23 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <!-- <AddNewUser/> -->
+    <EditUser/>
+    <!-- <PaymentIntent/> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// import AddNewUser from "./components/AddNewUser.vue";
+import EditUser from "./components/EditUser.vue";
+// import PaymentIntent from "./components/CreatePaymentIntent.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    // AddNewUser,
+    EditUser,
+    // PaymentIntent,
+  },
+};
 </script>
 
 <style>
@@ -24,5 +28,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h1 {
+  text-align: center;
 }
 </style>
