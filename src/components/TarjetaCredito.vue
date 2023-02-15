@@ -1,49 +1,85 @@
 <template>
-  <div class = "card">
-    <div class = "card-body">
-        <h5 class = "font-weight-bold mb-4">Tarjeta de crédito</h5>
+  <div class="card">
+    <div>
+      <h1>Crear y tokenizar Tarjeta de credito</h1>
+    </div>
+    <div class="row bg-success justify-content-center vh-100">
+      <b-form class="register">
+        <b-form-group
+          id="input-group-1"
+          label="Datos de Tarjeta:"
+          label-for="input-1"
+        >
+          <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+            <b-form-input
+              id="inline-form-input-username"
+              placeholder="Numero de tarjeta"
+            ></b-form-input>
+          </b-input-group>
+          <br />
+          <b-form inline>
+            <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+              <b-form-input
+                id="inline-form-input-Mes"
+                placeholder="Mes"
+              ></b-form-input>
+              <b-form-input 
+                id="inline-form-input-año"
+                placeholder="año"
+              ></b-form-input>
+            </b-input-group>
 
-      <!-- -->
-      <div class = "row">
+            <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+              <b-form-input
+                id="inline-form-input-ccv"
+                placeholder="ccv"
+              ></b-form-input>
+            </b-input-group>
+          </b-form>
+        </b-form-group>
+        <b-form-group
+          id="input-group-1"
+          label="Direcciones de Facturacion:"
+          label-for="input-1"
+        >
+          <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+            <b-form-input
+              id="inline-form-input-pais"
+              placeholder="pais"
+            ></b-form-input>
+          </b-input-group>
+          <br />
+          <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+            <b-form-input
+              id="inline-form-input-ciudad"
+              placeholder="ciudad"
+            ></b-form-input>
+          </b-input-group>
+          <br />
+          <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+            <b-form-input
+              id="inline-form-input-direccion"
+              placeholder="direccion"
+            ></b-form-input>
+          </b-input-group>
+          <br />
+          <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+            <b-form-input
+              id="inline-form-input-postal"
+              placeholder="codigo postal"
+            ></b-form-input>
+          </b-input-group>
+        </b-form-group>
 
-        <div class = "col-md">
-            <label for = "cardnameInput">Nombre en la tarjeta</label>
-            <input type = "text" class = "form-control mb-2" id = "cardnameInput" />
-        </div>
-
-        <div class = "col-md">
-            <label for = "cardnumberInput">Número en la tarjeta</label>
-            <input type = "text" class = "form-control mb-2" id = "cardnumberInput" placeholder = "0000 0000 0000 0000" />        
-        </div>
-
-        <div class = "col-md">
-            <label for = "expirydateInput">Expiración</label>
-            <input type = "text" class = "form-control mb-2" id = "expirydateInput" placeholder = "MM/YY" />
-        </div>
-
-        <div class = "col-md">
-            <label for = "cvvcodeInput">CVV</label>
-            <input type = "text" class = "form-control mb-2" id = "cvvcodeInput" placeholder = "CVV"/>     
-        </div>
-
-      </div>
-
-        <!-- -->
-        <div class = "custom-control custom-checkbox mt-2">
-            <input type = "checkbox" class = "custom-control-input" id = "checkAceptar" />
-            <label class = "custom-control-label" for = "checkAceptar">Al marcar esta casilla, aceptas nuestros términos bancarios.</label>
-        </div>
-
-        <!-- -->
-        <div class = "row mt-2 mb-1 d-flex justify-content-end">
-
-            <div class = "col d-flex justify-content-end">
-                <button type = "button" class = "btn btn-danger px-4 mr-3" disabled>Cancelar</button>
-                <button type = "button" class = "btn btn-primary px-4" disabled>Guardar tarjeta</button>
-            </div>
-        </div>
-
-     </div>
-   </div>
-
+        <button type="button" class="btn btn-primary px-4">
+          Guardar detalles
+        </button>
+      </b-form>
+    </div>
+  </div>
 </template>
+<style>
+form.register {
+  margin-top: 100px;
+}
+</style>

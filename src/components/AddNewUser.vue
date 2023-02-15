@@ -66,7 +66,7 @@ export default {
   methods: {
     login() {
       console.log(this.data);
-      fetch(`${process.env.VUE_APP_API}/login`, {
+      fetch(`${process.env.VUE_APP_API}/customers`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,6 +104,11 @@ export default {
 };
 </script>
 <style >
+h1 {
+  margin: 0px;
+  background-color: green;
+  color: blue;
+}
 .register {
   border: 2px solid black;
   text-align: center;

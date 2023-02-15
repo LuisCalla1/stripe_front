@@ -73,7 +73,7 @@ export default {
     login() {
       const stripePayment = window.localStorage.getItem("customers");
       console.log(this.data);
-      fetch(`${process.env.VUE_APP_API}/updatecustomer2`, {
+      fetch(`${process.env.VUE_APP_API}/updateCustomer2`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

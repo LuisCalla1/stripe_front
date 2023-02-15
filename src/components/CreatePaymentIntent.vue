@@ -48,7 +48,7 @@ export default {
     const customerId = JSON.parse(stripePayment)?.customer;
     return {
       payment: {
-        amount: 11,
+        amount: 10,
         // currency: "USD",
         description: "adsfa",
         customer_id: customerId,
@@ -73,7 +73,7 @@ export default {
         },
         body: JSON.stringify({
           amount: this.payment.amount,
-        //   currency: this.paymentInt.currency,
+        //currency: this.paymentInt.currency,
           description: this.payment.description,
           customer_id: this.payment.customer_id,
         }),

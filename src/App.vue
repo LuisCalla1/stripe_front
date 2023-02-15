@@ -1,24 +1,16 @@
 <template>
-  <div>
-    <!-- <AddNewUser/> -->
-    <EditUser/>
-    <!-- <PaymentIntent/> -->
+  <div id="app">
+    <b-navbar toggleable="lg" type="dark" variant="info">
+      <b-navbar-brand to="/newuser">Nuevo Usuario</b-navbar-brand>
+      <b-navbar-brand to="/edituser">Editar Usuario</b-navbar-brand>
+      <b-navbar-brand to="/paymentintent">NuevoPaymentIntent</b-navbar-brand>
+      <b-navbar-brand to="/datostarjeta">Crear y tokenizar Tarjetas</b-navbar-brand>
+      
+    </b-navbar>
+
+    <router-view />
   </div>
 </template>
-
-<script>
-// import AddNewUser from "./components/AddNewUser.vue";
-import EditUser from "./components/EditUser.vue";
-// import PaymentIntent from "./components/CreatePaymentIntent.vue";
-export default {
-  name: "App",
-  components: {
-    // AddNewUser,
-    EditUser,
-    // PaymentIntent,
-  },
-};
-</script>
 
 <style>
 #app {
@@ -27,9 +19,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-h1 {
-  text-align: center;
+
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42a7b9;
 }
 </style>
