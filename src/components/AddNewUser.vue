@@ -1,7 +1,42 @@
 <template>
   <div>
     <div><h1>Registrar Nuevo Usuario</h1></div>
-    <div class="row  bg-success justify-content-center align-items-center vh-100">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header">
+              <h3>add a new website</h3>
+            </div>
+            <div class="card-body"></div>
+          </div>
+        </div>
+         <div class="col-sm-8 text-center">
+        <div class="card">
+          <div class="card-header">
+            <h3>lista de usuarios</h3>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>stripeId</th>
+                  <th>Nombre</th>
+                  <th>Correo</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div>
+     
+    </div>
+
+    <div
+      class="row bg-success justify-content-center align-items-center vh-100"
+    >
       <b-form class="register">
         <b-form-group id="input-group-1" label="Email:" label-for="input-1">
           <b-form-input
@@ -87,11 +122,12 @@ export default {
         })
         .then((response) => {
           if (response.status) {
-            console.log(response.data);
+            console.log(response.id);
+            console.log(response.email);
             window.localStorage.setItem(
               "customers",
               JSON.stringify({
-                customer: response.data.id,
+                customer: response.id,
               })
             );
           }
@@ -113,9 +149,9 @@ h1 {
   border: 2px solid black;
   text-align: center;
   width: 480px;
-  height: 480px; 
-  padding: 48px 48px; 
+  height: 480px;
+  padding: 48px 48px;
   font-size: 22px;
-  color: blue; 
+  color: blue;
 }
 </style>

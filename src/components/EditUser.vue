@@ -56,7 +56,9 @@
 <script>
 export default {
   data() {
+    const stripePayment = window.localStorage.getItem("customers");
     return {
+      userId: JSON.parse(stripePayment)?.customer,
       email: "",
       name: "",
       description: "",
@@ -71,15 +73,14 @@ export default {
   },
   methods: {
     login() {
-      const stripePayment = window.localStorage.getItem("customers");
-      console.log(this.data);
-      fetch(`${process.env.VUE_APP_API}/updateCustomer2`, {
+      //const stripePayment = window.localStorage.getItem("customers");
+      fetch(`${process.env.VUE_APP_API}/customers/${this.userId}/update`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userId:JSON.parse(stripePayment)?.customer,
+          userId: this.userId,
           email: this.email,
           name: this.name,
           description: this.description,
@@ -89,20 +90,15 @@ export default {
         .then((res) => {
           
           if (res === 200 || res.status < 300) {
-            console.log("🚀 ~ file: EditUser.vue:82 ~ .then ~ res", res)
+            console.log("Usuario actualizado con exito",)
             return res.json();
           }
           throw res;
         })
         .then((response) => {
           if (response.status) {
-            console.log(response.data);
-            window.localStorage.setItem(
-              "customers",
-              JSON.stringify({
-                customer: response.data.id,
-              })
-            );
+            console.log("el usuario ",response.id,"a sido actualizado");
+            console.log(response.email);
           }
         })
         .catch((err) => {

@@ -64,8 +64,6 @@ export default {
   methods: {
     paymentIntent() {
       console.log(this.payment);
-      //   const stripePayment = window.localStorage.getItem("customers");
-      //   const customerId = JSON.parse(stripePayment)?.customer;
       fetch(`${process.env.VUE_APP_API}/paymentIntent`, {
         method: "POST",
         headers: {
