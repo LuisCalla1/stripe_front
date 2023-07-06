@@ -64,7 +64,7 @@ export default {
   methods: {
     paymentIntent() {
       console.log(this.payment);
-      fetch(`${process.env.VUE_APP_API}/paymentIntent`, {
+      fetch(`${process.env.VUE_APP_API}/payment_intents/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,17 +79,16 @@ export default {
         .then((res) => {
           if (res === 200 || res.status < 300) {
             console.log(
-              "🚀 ~ file: CreatePaymentIntent.vue:80 ~ .then ~ res",
-              res
+              "🚀Payment intent created successfully"
             );
-
             return res.json();
           }
           throw res;
         })
         .then((response) => {
           if (response.status) {
-            console.log(response.data);
+            console.log(response.id);
+            console.log(response.customer);
           }
         })
         .catch((err) => {

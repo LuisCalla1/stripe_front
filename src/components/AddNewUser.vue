@@ -115,7 +115,7 @@ export default {
       })
         .then((res) => {
           if (res === 200 || res.status < 300) {
-            console.log("🚀 ~ file: AddNewUser.vue:81 ~ .then ~ res", res);
+            console.log("🚀Usuario creado con exito");
             return res.json();
           }
           throw res;

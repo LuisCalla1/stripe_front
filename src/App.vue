@@ -5,7 +5,7 @@
       <b-navbar-brand to="/edituser">Editar Usuario</b-navbar-brand>
       <b-navbar-brand to="/paymentintent">NuevoPaymentIntent</b-navbar-brand>
       <b-navbar-brand to="/datostarjeta">Crear y tokenizar Tarjetas</b-navbar-brand>
-      
+      <b-navbar-brand to="/subirarchivo">subir archivo</b-navbar-brand>
     </b-navbar>
 
     <router-view />

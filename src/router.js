@@ -27,6 +27,11 @@ export default new Router({
         name: 'datostarjeta',
         component: () => import('./views/DatosTarjeta.vue')
       },
+      {
+        path: '/subirarchivo',
+        name: 'subirarchivo',
+        component: () => import('./views/SubirArchivos.vue')
+      },
     ]
   })
 

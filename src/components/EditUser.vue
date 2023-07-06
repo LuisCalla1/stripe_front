@@ -73,7 +73,7 @@ export default {
   },
   methods: {
     login() {
-      //const stripePayment = window.localStorage.getItem("customers");
+
       fetch(`${process.env.VUE_APP_API}/customers/${this.userId}/update`, {
         method: "POST",
         headers: {
